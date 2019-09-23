@@ -75,7 +75,12 @@ function ShoppingListService() {
   var items = [
     {name:"Milk", quantity:"2 bottle"},
     {name:"Chees", quantity:"200 gramm"},
-    {name:"Oil", quantity:"1 bottle"}
+    {name:"Oil", quantity:"1 bottle"},
+    {name:"Coffe", quantity:"1 bottle"},
+    {name:"Cocao", quantity:"1 bottle"},
+    {name:"Pepsi", quantity:"1 bottle"},
+    {name:"Cola", quantity:"1 bottle"},
+    {name:"Sprite", quantity:"1 bottle"}
   ];
 
   shoppingService.addItem = function (itemName, quantity) {
