@@ -32,6 +32,10 @@ function ShoppingListController(ShoppingListFactory) {
     console.log("ShoppingListController list1.isEmpty");
     return shoppingList.isEmpty();
   }
+
+  list1.boughtItem = function (itemIndex, list) {
+    shoppingList.boughtItem(itemIndex, list);
+  };
 }
 
 
@@ -91,11 +95,13 @@ function ShoppingListService() {
   };
 
   shoppingService.isEmpty = function(){
-    console.log("shoppingService.isEmpty");
-    console.log("ShoppingListService():",items.length);
-    console.log("ShoppingListService():",items);
     return items.length == 0;
   };
+
+  shoppingService.boughtItem = function (itemIndex, list) {
+    list.items.push(items[itemIndex]);
+    shoppingService.removeItem(itemIndex);
+  }
 }
 
 function BoughtListService() {
@@ -109,6 +115,8 @@ function BoughtListService() {
         name: itemName,
         quantity: quantity
       };
+      console.log("itemName=",itemName);
+      console.log("quantity=",quantity);
       items.push(item);
   };
 
